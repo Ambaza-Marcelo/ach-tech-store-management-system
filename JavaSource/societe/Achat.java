@@ -16,4 +16,12 @@ public class Achat {
 		this.achatID = achatID;
 		this.description = description;
 	}
+	
+	/*
+	 * le constructeur vide d'Achat
+	 */
+	
+	public Achat(){
+		
+	}
 }
