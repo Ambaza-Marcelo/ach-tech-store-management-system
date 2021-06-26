@@ -18,4 +18,9 @@ public class Produit {
 		this.prix_unitaire = prix_unitaire;
 		this.quantite = quantite;
 	}
+	
+	
+	public Produit(){
+		
+	}
 }
