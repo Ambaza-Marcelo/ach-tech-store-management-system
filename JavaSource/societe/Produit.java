@@ -19,7 +19,9 @@ public class Produit {
 		this.quantite = quantite;
 	}
 	
-	
+	/*
+	 * le constructeur vide du produit
+	 */
 	public Produit(){
 		
 	}
