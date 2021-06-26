@@ -21,7 +21,9 @@ public class Client {
 		this.telephone = telephone;
 	}
 	
-	
+	/*
+	 * le constructeur vide du client
+	 */
 	
 	public Client(){
 		
