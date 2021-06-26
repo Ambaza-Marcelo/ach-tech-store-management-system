@@ -20,4 +20,10 @@ public class Client {
 		this.adresse = adresse;
 		this.telephone = telephone;
 	}
+	
+	
+	
+	public Client(){
+		
+	}
 }
