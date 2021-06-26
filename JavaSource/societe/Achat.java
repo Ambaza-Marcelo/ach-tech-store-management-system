@@ -24,4 +24,24 @@ public class Achat {
 	public Achat(){
 		
 	}
+	/*
+	 * generation automatique des accesseurs et mutateurs
+	 */
+
+	public int getAchatID() {
+		return achatID;
+	}
+
+	public void setAchatID(int achatID) {
+		this.achatID = achatID;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 }
