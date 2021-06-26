@@ -1,5 +1,9 @@
 package societe;
 
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+
 public class Client {
 	/*
 	 * les attributs
@@ -10,6 +14,8 @@ public class Client {
 	private String adresse;
 	private int telephone;
 	private Produit produitID;
+	
+	private List<SelectItem> list_client;
 	
 	/*
 	 * le constructeur de la classe Client
