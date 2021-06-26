@@ -14,4 +14,12 @@ public class Vente {
 	public Vente(String description){
 		this.description = description;
 	}
+	
+	/*
+	 * le constructeur vide de Vente
+	 */
+	
+	public Vente(){
+		
+	}
 }
