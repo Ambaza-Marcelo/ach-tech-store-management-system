@@ -10,4 +10,13 @@ public class Client {
 	private String adresse;
 	private int telephone;
 	
+	/*
+	 * le constructeur de la classe Client
+	 */
+	public Client(String nom,String prenom,String adresse,int telephone){
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.telephone = telephone;
+	}
 }
