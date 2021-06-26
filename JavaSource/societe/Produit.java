@@ -25,4 +25,42 @@ public class Produit {
 	public Produit(){
 		
 	}
+
+	/*
+	 * generation auoto des getters et setters
+	 */
+	public int getProduitID() {
+		return produitID;
+	}
+
+	public void setProduitID(int produitID) {
+		this.produitID = produitID;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public int getPrix_unitaire() {
+		return prix_unitaire;
+	}
+
+	public void setPrix_unitaire(int prix_unitaire) {
+		this.prix_unitaire = prix_unitaire;
+	}
+
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
+	
+	
+	
 }
