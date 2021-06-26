@@ -8,5 +8,10 @@ public class Vente {
 	private int venteID;
 	private String description;
 	
-	
+	/*
+	 * le constructeur de la classe Vente
+	 */
+	public Vente(String description){
+		this.description = description;
+	}
 }
