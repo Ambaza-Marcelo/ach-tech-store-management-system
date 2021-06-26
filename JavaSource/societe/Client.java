@@ -9,6 +9,7 @@ public class Client {
 	private String prenom;
 	private String adresse;
 	private int telephone;
+	private Produit produitID;
 	
 	/*
 	 * le constructeur de la classe Client
