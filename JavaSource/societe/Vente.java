@@ -22,4 +22,23 @@ public class Vente {
 	public Vente(){
 		
 	}
+
+	/*
+	 * generate auto setters and getters
+	 */
+	public int getVenteID() {
+		return venteID;
+	}
+
+	public void setVenteID(int venteID) {
+		this.venteID = venteID;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
