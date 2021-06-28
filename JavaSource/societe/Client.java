@@ -192,6 +192,9 @@ public class Client {
 	public void update(){
 		
 	}
+	/*
+	 * supprimer un client
+	 */
 	
 	
 }
