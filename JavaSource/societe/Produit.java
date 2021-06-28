@@ -59,7 +59,9 @@ public class Produit {
 	}
 	
 	private List<Produit> list_produit = new ArrayList<Produit>();
-	
+	/*
+	 * ajouter un produit
+	 */
 	public void add_produit(){
 		
 		int msg = MysqlDB.update_Bd("insert into produit(nom,prix_unitaire,quantite) "+
@@ -74,7 +76,7 @@ public class Produit {
 	}
 
 	/*
-	 * generation auoto des getters et setters
+	 * generation automatique des getters et setters
 	 */
 	public int getProduitID() {
 		return produitID;
