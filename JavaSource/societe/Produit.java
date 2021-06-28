@@ -123,6 +123,9 @@ public class Produit {
 	public static void update(){
 		
 	}
+	/*
+	 * la supression du produit
+	 */
 	public static void delete(){
 		
 	}
