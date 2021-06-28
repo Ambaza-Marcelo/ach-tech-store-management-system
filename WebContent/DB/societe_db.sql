@@ -8,11 +8,15 @@ create table client(
 	adresse varchar(100),
 	telephone varchar(15),
 	produitID int(6) not null,
-	//la cle etrangere
+	/*
+	 * la cle etrangere
+	 */
 	foreign key client(produitID) references produit(produitID)
 )ENGINE="innodb";
 
-
+/*
+ * creation de la table produit
+ */
 create table produit(
 	produitID int primary key auto_increment,
 	nom varchar(50),
