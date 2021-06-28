@@ -90,6 +90,9 @@ public class Client {
 		return client_list;
 	}
 	
+	/*
+	 * select Item list
+	 */
 	private List<SelectItem> list_produit;
 	
 	
