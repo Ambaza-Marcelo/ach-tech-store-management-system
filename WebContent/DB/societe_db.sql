@@ -1,6 +1,6 @@
 //creation de la base de donnees gestionsociete
 create database gestion_societe;
-
+//creation de la table client
 create table client(
 	clientID int primary key auto_increment,
 	nom varchar(20),
