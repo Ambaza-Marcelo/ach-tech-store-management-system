@@ -186,7 +186,9 @@ public class Client {
 	public void setProduitID(Produit produitID) {
 		this.produitID = produitID;
 	}
-	
+	/*
+	 * modifier un client
+	 */
 	public void update(){
 		
 	}
