@@ -1,3 +1,4 @@
+//creation de la base de donnees gestionsociete
 create database gestion_societe;
 
 create table client(
