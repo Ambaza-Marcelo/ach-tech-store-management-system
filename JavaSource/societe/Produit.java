@@ -29,7 +29,9 @@ public class Produit {
 	private List<Produit> prod_liste;
 	
 	
-	
+	/*
+	 * liste des produits
+	 */
 	public List<Produit> getProd_liste() {
 		ResultSet result = MysqlDB.extraire_DB("select * from produit");
 		if(prod_liste == null)
