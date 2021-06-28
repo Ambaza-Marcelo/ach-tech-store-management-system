@@ -119,7 +119,9 @@ public class Client {
 		}
 		return list_produit;
 	}
-	
+	/*
+	 * tableau dynamique
+	 */
 	private List<Client> list_client = new ArrayList<Client>();
 	
 	public void add_client(){
