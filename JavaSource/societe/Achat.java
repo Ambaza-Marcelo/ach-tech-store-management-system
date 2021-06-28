@@ -59,6 +59,9 @@ public class Achat {
 	public Achat(){
 		
 	}
+	/*
+	 * tableau dynamique
+	 */
 	private static List<Achat> list_achat = new ArrayList<Achat>();
 	public void add_achat(){
 		int msg = MysqlDB.update_Bd("insert into achat(description)"+
