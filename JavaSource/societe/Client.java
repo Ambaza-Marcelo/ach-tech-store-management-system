@@ -95,7 +95,9 @@ public class Client {
 	 */
 	private List<SelectItem> list_produit;
 	
-	
+	/*
+	 * liste des produits
+	 */
 
 	public List<SelectItem> getList_produit() {
 		
