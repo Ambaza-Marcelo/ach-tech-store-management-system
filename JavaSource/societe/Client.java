@@ -136,6 +136,9 @@ public class Client {
 			this.msg = "desole,erreur d'enregistement";
 	}
 
+	/*
+	 * les accesseurs et les mutateurs
+	 */
 	public int getClientID() {
 		return clientID;
 	}
