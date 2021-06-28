@@ -25,12 +25,16 @@ create table produit(
 	prix_unitaire int,
 	quantite int
 )ENGINE="innodb";
-
+/*
+ * table achat
+ */
 create table achat(
 	achatID int primary key auto_increment,
 	description varchar(255)
 )ENGINE="innodb";
-
+/*
+ * craetion de la table vente
+ */
 create table vente(
 	venteID int primary key auto_increment,
 	description varchar(255)
