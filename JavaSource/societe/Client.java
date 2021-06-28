@@ -123,7 +123,9 @@ public class Client {
 	 * tableau dynamique
 	 */
 	private List<Client> list_client = new ArrayList<Client>();
-	
+	/*
+	 * ajouter un client
+	 */
 	public void add_client(){
 		int msg = MysqlDB.update_Bd("insert into client(nom,prenom,adresse,telephone,produitID) values('"+this.nom
 				+"','"+this.prenom+"','"+this.adresse+"','"+this.telephone
