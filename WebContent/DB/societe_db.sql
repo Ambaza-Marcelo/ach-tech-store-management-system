@@ -5,8 +5,12 @@ create table client(
 	nom varchar(20),
 	prenom varchar(20),
 	adresse varchar(100),
-	telephone varchar(15)
+	telephone varchar(15),
+	produitID int(6) not null,
+	
+	foreign key client(produitID) references produit(produitID)
 )ENGINE="innodb";
+
 
 create table produit(
 	produitID int primary key auto_increment,

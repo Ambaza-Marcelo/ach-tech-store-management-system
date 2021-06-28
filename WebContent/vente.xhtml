@@ -10,9 +10,11 @@
 
   <body>
   	<h:form>
-  		<h:panelGrid columns="1">
- 			<h:outputText value="description" />
+  		<h:panelGrid columns="2">
+  			<h:outputText value="description:" />
+  			<h:inputText value="#{ven.descriptio}" />
   		</h:panelGrid>
   	</h:form>
+  	<a4j:commandButton action="#{}" value="Enregistrer" />
   </body>
 </html>

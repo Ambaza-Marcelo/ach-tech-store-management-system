@@ -9,6 +9,12 @@
   <head></head>
 
   <body>
- 
+  		<h:form>
+  			<h:panelGrid columns="2">
+  				<h:outputText value="Description" />
+  				<h:inputTextarea value="#{ach.description}" />
+  			</h:panelGrid>
+  		</h:form>
+ 		<a4j:commandButton action="#{ach.add_achat}" value="Enregistrer" />
   </body>
 </html>
