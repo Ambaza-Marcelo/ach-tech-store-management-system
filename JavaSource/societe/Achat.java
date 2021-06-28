@@ -51,6 +51,10 @@ public class Achat {
 		}
 		return achat_list;
 	}
+	
+	/*
+	 * le constructeur vide
+	 */
 
 	public Achat(){
 		
