@@ -187,5 +187,9 @@ public class Client {
 		this.produitID = produitID;
 	}
 	
+	public void update(){
+		
+	}
+	
 	
 }
