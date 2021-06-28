@@ -195,6 +195,8 @@ public class Client {
 	/*
 	 * supprimer un client
 	 */
-	
+	public void delete(){
+		
+	}
 	
 }
