@@ -117,7 +117,9 @@ public class Produit {
 	public String getMsg() {
 		return msg;
 	}
-	
+	/*
+	 * la modification du produit
+	 */
 	public static void update(){
 		
 	}
