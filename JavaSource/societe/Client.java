@@ -64,7 +64,7 @@ public class Client {
 	
 
 	/*
-	 * generation auto des getters et setters
+	 * list des clients
 	 */
 
 
