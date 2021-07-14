@@ -38,3 +38,9 @@ create table achat(
 /*
  * craetion de la table vente
  */
+create table vente(
+	venteID int primary key auto_increment,
+	description varchar(255),
+	quantite int,
+	prix_vente int
+)ENGINE="innodb";
