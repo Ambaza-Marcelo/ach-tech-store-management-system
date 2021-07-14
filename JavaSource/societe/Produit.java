@@ -28,7 +28,6 @@ public class Produit {
 	
 	private List<Produit> prod_liste;
 	
-	
 	/*
 	 * liste des produits
 	 */
@@ -38,7 +37,7 @@ public class Produit {
 			prod_liste = new ArrayList<Produit>();
 		else
 			prod_liste.clear();
-		
+		if(result != null){
 		try {
 			while(result.next()){
 				prod_liste.add(new Produit(result.getString("nom"),
@@ -48,13 +47,17 @@ public class Produit {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		}
 		return prod_liste;
 	}
+	
+	
 
 	/*
 	 * le constructeur vide du produit
 	 */
-	public Produit(){
+	public Produit()
+	{
 		
 	}
 	
@@ -116,18 +119,6 @@ public class Produit {
 
 	public String getMsg() {
 		return msg;
-	}
-	/*
-	 * la modification du produit
-	 */
-	public static void update(){
-		
-	}
-	/*
-	 * la supression du produit
-	 */
-	public static void delete(){
-		
 	}
 
 	public static Produit getProduit(int int1) {

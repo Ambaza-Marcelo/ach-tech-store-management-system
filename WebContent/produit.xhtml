@@ -9,54 +9,47 @@
   <head></head>
 
   <body style="background-image:url('card.jpg')">
-  <h1 style="margin-left:25%">GESTION DE LA SOCIETE AMBAZA</h1>
+  <h1 style="margin-left:15%">GESTION DE LA SOCIETE <span style="font-family:Arial Rounded MT Bold;color:white;">ACH ELECTRONICS STORE</span></h1>
   	<rich:panel>
   		<div>
   		<img src="dollar.jpg" alt="logo de la societe" />
   			<h1 style="margin-left:105px;margin-top:-50px">Gestion des produits</h1>
   		</div>
   		<br/>
-  		<h:form>
-  			<h:panelGrid columns="2" style="font-size:20px">
+  		<h:form style="font-size:25px;">
+  			<h:panelGrid columns="2">
   				<h:outputText value="nom produit:" />
   				<h:inputText value="#{prod.nom}"/>
   				<h:outputText value="prix unitaire:" />
   				<h:inputText value="#{prod.prix_unitaire}" />
   				<h:outputText value="quantite:" />
   				<h:inputText value="#{prod.quantite}" />
-  				<a4j:commandButton action="#{prod.add_produit}" value="Enregistrer" data="#{prod.msg}"/>
+  				<a4j:commandButton action="#{prod.add_produit}" value="Enregistrer" data="#{prod.msg}" oncomplete="alert(data)"/>
   			</h:panelGrid>
   		</h:form>
- 	
-  		
-  		<rich:dataTable value="#{prod.prod_liste}" var="prod_list">
+ 		
+  		<rich:dataTable value="#{prod.prod_liste}" var="prod_list" style="width:600px;height:200px;">
   			<h:column>
   				<f:facet name="header">nom</f:facet>
-  				<h:outputText value="#{prod_list.nom}" />
+  				<h:outputText value="#{prod_list.nom}"  style="font-size:25px;"/>
   			</h:column>
   			<h:column>
   				<f:facet name="header">Prix Unitaire</f:facet>
-  				<h:outputText value="#{prod_list.prix_unitaire}" />
+  				<h:outputText value="#{prod_list.prix_unitaire} Fbu"  style="font-size:25px;"/>
   			</h:column>
   			<h:column>
   				<f:facet name="header">Quantite</f:facet>
-  				<h:outputText value="#{prod_list.quantite}" />
-  			</h:column>
-  			<h:column>
-  				<f:facet name="header">Actions</f:facet>
-  				<h:commandButton action="#{prod.update}" value="modifier" />
-  				<h:commandButton action="#{prod.delete}" value="Supprimer" />
+  				<h:outputText value="#{prod_list.quantite}"  style="font-size:25px;"/>
   			</h:column>
   		</rich:dataTable>
   	</rich:panel>
   	<br/>
   	<rich:panel>
-  	<a4j:keepAlive beanName="cl" />
-  	   <h:form>
   			<div>
   			<img src="2000.png" alt="" />
   			<h1 style="margin-left:150px;margin-top:-70px">Gestion des Clients</h1>
   			</div>
+  		<h:form style="font-size:25px;">
   			<h:panelGrid columns="2" style="margin-top:70px">
   				<h:outputText value="nom:" />
   				<h:inputText value="#{cl.nom}" />
@@ -70,8 +63,10 @@
   				<h:selectOneMenu value="#{cl.produitID.produitID}">
 					<f:selectItems value="#{cl.list_produit}"/>
 				</h:selectOneMenu>
+				<h:outputText value="Quantite:" />
+  				<h:inputText value="#{cl.quantite}" />
   			</h:panelGrid>
-  			<a4j:commandButton action="#{cl.add_client}" value="Enregistrer" />
+  			<a4j:commandButton action="#{cl.add_client}" value="Enregistrer" data="#{cl.msg}" oncomplete="alert(data)"/>
   		</h:form>
   		<rich:dataTable>
   			<h:column>
@@ -110,11 +105,6 @@
   				<f:facet name="header">prix Total</f:facet>
   				<h:outputText value="" />
   			</h:column>
-  			<h:column>
-  				<f:facet name="header">Actions</f:facet>
-  				<a4j:commandButton action="#{cl.update}" value="Modifier" />
-  				<a4j:commandButton action="#{cl.delete}" value="Supprimer" />
-  			</h:column>
   		</rich:dataTable>
   		</rich:panel>
   		<br/>
@@ -123,22 +113,33 @@
   		<img src="7000.jpg" alt="logo de la societe" />
   			<h1 style="margin-left:150px;margin-top:-100px">Gestion des achats</h1>
   		</div>
-  			<h:form>
+  			<h:form  style="font-size:25px;">
   			<h:panelGrid columns="2" style="margin-top:70px">
   				<h:outputText value="Description" />
-  				<h:inputTextarea value="#{ach.description}" />
+  				<h:inputText value="#{ach.description}" />
+  				<h:outputText value="Prix d'Achat" />
+  				<h:inputText value="#{ach.prix_achat}" />
+  				<h:outputText value="Prix de Vente" />
+  				<h:inputText value="#{ach.prix_vente}" />
   			</h:panelGrid>
-  			<a4j:commandButton action="#{ach.add_achat}" value="Enregistrer" />
+  			<a4j:commandButton action="#{ach.add_achat}" value="Enregistrer" data="#{ach.msg}" oncomplete="alert(data)"/>
   		</h:form>
-  		<rich:dataTable value="" var="achat">
+  		<rich:dataTable value="#{ach.achat_list}" var="achat"  style="width:600px;height:200px;">
   			<h:column>
-  				<f:facet name="header">Description des achats</f:facet>
-  				<h:outputText value="" />
+  				<f:facet name="header">Description</f:facet>
+  				<h:outputText value="#{achat.description}"  style="font-size:25px;"/>
   			</h:column>
   			<h:column>
-  				<f:facet name="header">Actions</f:facet>
-  				<a4j:commandButton action="#{ach.update}" value="Modifier" />
-  				<a4j:commandButton action="#{ach.delete}" value="Supprimer" />
+  				<f:facet name="header">Prix d'Achat</f:facet>
+  				<h:outputText value="#{achat.prix_achat} Fbu"  style="font-size:25px;"/>
+  			</h:column>
+  			<h:column>
+  				<f:facet name="header">Prix de Vente</f:facet>
+  				<h:outputText value="#{achat.prix_vente} Fbu"  style="font-size:25px;"/>
+  			</h:column>
+  			<h:column>
+  				<f:facet name="header">Benefice</f:facet>
+  				<h:outputText value="#{achat.prix_vente - achat.prix_achat} Fbu"  style="font-size:25px;"/>
   			</h:column>
   		</rich:dataTable>
   		</rich:panel>
@@ -148,22 +149,35 @@
   		<img src="1000.png" alt="" />
   			<h1 style="margin-left:150px;margin-top:-70px">Gestion des ventes</h1>
   		</div>
-  			<h:form>
+  			<h:form  style="font-size:25px;">
   			<h:panelGrid columns="2" style="margin-top:70px">
   				<h:outputText value="Description" />
-  				<h:inputTextarea value="#{ven.description}" />
+  				<h:inputText value="#{ven.description}" />
+  				<h:outputText value="Quantite:" />
+  				<h:inputText value="#{ven.quantite}" />
+  				<h:outputText value="Prix de Vente:" />
+  				<h:inputText value="#{ven.prix_vente}" />
   			</h:panelGrid>
+  			<a4j:commandButton action="#{ven.add_vente}" value="Enregistrer" data="#{ven.msg}" oncomplete="alert(data)"/>
   		</h:form>
-  		<a4j:commandButton action="#{ven.add_vente}" value="Enregistrer" />
-  		<rich:dataTable value="" var="vente">
+  		
+  		
+  		<rich:dataTable value="#{ven.vente_list}" var="vente"  style="width:600px;height:200px;">
   			<h:column>
-  				<f:facet name="header">Description des ventes</f:facet>
-  				<h:outputText value="" />
+  				<f:facet name="header">Description</f:facet>
+  				<h:outputText value="#{vente.description}" style="font-size:25px;"/>
   			</h:column>
   			<h:column>
-  				<f:facet name="header">Actions</f:facet>
-  				<a4j:commandButton action="#{ven.update}" value="Modifier" />
-  				<a4j:commandButton action="#{ven.delete}" value="Supprimer" />
+  				<f:facet name="header">Quantite</f:facet>
+  				<h:outputText value="#{vente.quantite}"  style="font-size:25px;"/>
+  			</h:column>
+  			<h:column>
+  				<f:facet name="header">Prix unitaire</f:facet>
+  				<h:outputText value="#{vente.prix_vente} Fbu"  style="font-size:25px;"/>
+  			</h:column>
+  			<h:column>
+  				<f:facet name="header">Prix Total</f:facet>
+  				<h:outputText value="#{vente.quantite * vente.prix_vente} Fbu"  style="font-size:25px;"/>
   			</h:column>
   		</rich:dataTable>
   		</rich:panel>

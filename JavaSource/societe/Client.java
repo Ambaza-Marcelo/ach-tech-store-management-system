@@ -19,18 +19,20 @@ public class Client {
 	private String adresse;
 	private int telephone;
 	private Produit produitID;
+	private int quantite;
 	
 	
 	/*
 	 * le constructeur de la classe Client
 	 */
-	public Client(int clientID,String nom,String prenom,String adresse,int telephone,Produit prod){
+	public Client(int clientID,String nom,String prenom,String adresse,int telephone,Produit prod,int quantite){
 		this.clientID = clientID;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 		this.telephone = telephone;
 		produitID =prod;
+		this.quantite = quantite;
 	}
 	
 	public void get_client_with_produit(List<SelectItem> list){
@@ -59,7 +61,7 @@ public class Client {
 		
 	}
 	
-	private static List<Client> client_list;
+	private List<Client> client_list;
 	
 	
 
@@ -68,7 +70,7 @@ public class Client {
 	 */
 
 
-	public static List<Client> getClient_list() {
+	public List<Client> getClient_list() {
 		ResultSet result = MysqlDB.extraire_DB("select * from client");
 		if(client_list==null)
 			client_list = new ArrayList<Client>();
@@ -80,7 +82,8 @@ public class Client {
 				while(result.next()){
 					client_list.add(new Client(result.getInt("clientID"),result.getString("nom")
 							,result.getString("prenom"),result.getString("adresse")
-							,result.getInt("telephone"),Produit.getProduit(result.getInt("produitID"))));
+							,result.getInt("telephone"),Produit.getProduit(result.getInt("produitID")),
+							result.getInt("quantite")));
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -88,6 +91,27 @@ public class Client {
 			}
 		}
 		return client_list;
+	}
+	
+	public static Client getClient_Objet(int clID){
+		
+		Client el=null;
+		ResultSet result=MysqlDB.extraire_DB("select * from client where clientID="+clID);
+		
+		if(result!=null)
+			try {
+				if(result.next())
+					el=new Client(result.getInt("clientID"),result.getString("nom"),
+							result.getString("prenom"),
+							result.getString("adresse"),
+							result.getInt("telephone"),
+							Produit.getProduit(result.getInt("produitID")),result.getInt("quantite"));
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		return el;
 	}
 	
 	/*
@@ -119,6 +143,7 @@ public class Client {
 		}
 		return list_produit;
 	}
+	
 	/*
 	 * tableau dynamique
 	 */
@@ -127,9 +152,9 @@ public class Client {
 	 * ajouter un client
 	 */
 	public void add_client(){
-		int msg = MysqlDB.update_Bd("insert into client(nom,prenom,adresse,telephone,produitID) values('"+this.nom
+		int msg = MysqlDB.update_Bd("insert into client(nom,prenom,adresse,telephone,produitID,quantite) values('"+this.nom
 				+"','"+this.prenom+"','"+this.adresse+"','"+this.telephone
-				+"','"+this.produitID.getProduitID()+"')");
+				+"','"+this.produitID.getProduitID()+"','"+this.quantite+"')");
 		if(msg>0)
 			this.msg = "enregistrement avec succes";
 		else
@@ -170,6 +195,14 @@ public class Client {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+	
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
 
 	public int getTelephone() {
 		return telephone;
@@ -178,7 +211,7 @@ public class Client {
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
 	}
-
+	
 	public Produit getProduitID() {
 		return produitID;
 	}

@@ -10,6 +10,7 @@ create table client(
 	adresse varchar(100),
 	telephone varchar(15),
 	produitID int(6) not null,
+	quantite int,
 	/*
 	 * la cle etrangere
 	 */
@@ -30,12 +31,16 @@ create table produit(
  */
 create table achat(
 	achatID int primary key auto_increment,
-	description varchar(255)
+	description varchar(255),
+	prix_achat int,
+	prix_vente int
 )ENGINE="innodb";
 /*
  * craetion de la table vente
  */
 create table vente(
 	venteID int primary key auto_increment,
-	description varchar(255)
+	description varchar(255),
+	quantite int,
+	prix_vente int
 )ENGINE="innodb";

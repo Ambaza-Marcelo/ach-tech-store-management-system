@@ -12,19 +12,19 @@
  <managed-bean>
   <managed-bean-name>ach</managed-bean-name>
   <managed-bean-class>societe.Achat</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
+  <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  
  <managed-bean>
   <managed-bean-name>ven</managed-bean-name>
   <managed-bean-class>societe.Vente</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
+  <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  
  <managed-bean>
   <managed-bean-name>cl</managed-bean-name>
   <managed-bean-class>societe.Client</managed-bean-class>
-  <managed-bean-scope>request</managed-bean-scope>
+  <managed-bean-scope>session</managed-bean-scope>
  </managed-bean>
  
  <application>

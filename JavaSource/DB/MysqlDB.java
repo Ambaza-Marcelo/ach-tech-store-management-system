@@ -5,7 +5,6 @@ public class MysqlDB {
 	static Connection con=null;
 	private static String rapporteur="";
 	
-	
 	static void getIntance(){
 		
 		try {
@@ -25,22 +24,6 @@ public class MysqlDB {
 		
 	}
 
-	public static void main(String [] arg){
-		getIntance();
-		ResultSet result=extraire_DB("select person" +
-				"neID,nom,prenom from personne limit 5");
-		
-		try {
-			if(result!=null)
-			while(result.next())
-				System.out.println(result.getString("personneID")+","+result.getString("nom")+" "+result.getString("prenom"));
-			else System.out.println(rapporteur);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		//System.out.println(rapporteur);
-	}
 	/*
 	 * la suivante methode est utilisée pour interroger la base de donnée en lui passant
 	 * le parametre de type select

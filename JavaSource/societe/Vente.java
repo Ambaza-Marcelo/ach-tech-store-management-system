@@ -14,17 +14,21 @@ public class Vente {
 	 */
 	private int venteID;
 	private String description;
+	private int quantite;
+	private int prix_vente;
 	private String msg;
 	
 	/*
 	 * le constructeur de la classe Vente
 	 */
-	public Vente(int venteID,String description){
+	public Vente(int venteID,String description,int quantite,int prix_vente){
 		this.venteID = venteID;
 		this.description = description;
+		this.quantite = quantite;
+		this.prix_vente = prix_vente;
 	}
 	
-	private static List<Vente> vente_list;
+	private List<Vente> vente_list;
 	
 	
 	
@@ -32,7 +36,7 @@ public class Vente {
 	 * le constructeur vide de Vente
 	 */
 	
-	public static List<Vente> getVente_list() {
+	public List<Vente> getVente_list() {
 		
 		ResultSet result = MysqlDB.extraire_DB("select * from vente");
 		if(vente_list == null)
@@ -42,7 +46,8 @@ public class Vente {
 		if(result != null)
 			try {
 				while(result.next())
-					vente_list.add(new Vente(result.getInt("venteID"),result.getString("description")));
+					vente_list.add(new Vente(result.getInt("venteID"),result.getString("description"),result.getInt("quantite"),
+							result.getInt("prix_vente")));
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -55,11 +60,11 @@ public class Vente {
 		
 	}
 	
-	private static List<Vente> list_vente = new ArrayList<Vente>();
+	private List<Vente> list_vente = new ArrayList<Vente>();
 	
 	public void add_vente(){
-		int msg = MysqlDB.update_Bd("insert into vente(description)"+
-				"values('"+this.description+"')");
+		int msg = MysqlDB.update_Bd("insert into vente(description,quantite,prix_vente) "+
+				"values('"+this.description+"','"+this.quantite+"','"+this.prix_vente+"')");
 		
 		if(msg>0)
 			this.msg ="ok,vous avez enregistre la vente avec succes";
@@ -76,7 +81,32 @@ public class Vente {
 		return venteID;
 	}
 
-	public static List<Vente> getList_vente() {
+	
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
+
+	public int getPrix_vente() {
+		return prix_vente;
+	}
+
+	public void setPrix_vente(int prix_vente) {
+		this.prix_vente = prix_vente;
+	}
+
+	public List<Vente> getList_vente() {
 		return list_vente;
 	}
 
