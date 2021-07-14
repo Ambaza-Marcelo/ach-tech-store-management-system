@@ -29,10 +29,7 @@ public class Client {
 		this.clientID = clientID;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresse = adresse;
-		this.telephone = telephone;
-		produitID =prod;
-		this.quantite = quantite;
+		
 	}
 	
 	public void get_client_with_produit(List<SelectItem> list){
